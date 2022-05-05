@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,10 +13,14 @@ namespace SO_Projekt
 {
     public partial class Form1 : Form
     {
+        TrainMove tm = new TrainMove();
         public Form1()
         {
             InitializeComponent();
+            Thread train = new Thread(tm.TrainMoving);
         }
+
+      
 
     }
 }
