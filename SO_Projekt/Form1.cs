@@ -15,7 +15,6 @@ namespace SO_Projekt
         public Form1()
         {
             InitializeComponent();
-            pictureBox.Image = Image.FromFile("D:\\Andrii Kobel\\Systemy Operacyjne\\SO_Projekt\\materials\\mapa_v3.png"); // УВАГА. Тут нужно менять под путь к файлу на своём компьютере
         }
 
     }
