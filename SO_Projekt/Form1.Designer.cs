@@ -32,9 +32,11 @@
             this.train = new System.Windows.Forms.PictureBox();
             this.szlaban_1 = new System.Windows.Forms.PictureBox();
             this.szlaban_2 = new System.Windows.Forms.PictureBox();
+            this.LeftCar_1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.train)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_1)).BeginInit();
             this.SuspendLayout();
             // 
             // train
@@ -50,6 +52,7 @@
             // 
             // szlaban_1
             // 
+            this.szlaban_1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.szlaban_1.Location = new System.Drawing.Point(1010, 491);
             this.szlaban_1.Name = "szlaban_1";
             this.szlaban_1.Size = new System.Drawing.Size(26, 113);
@@ -59,12 +62,23 @@
             // 
             // szlaban_2
             // 
+            this.szlaban_2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.szlaban_2.Location = new System.Drawing.Point(1114, 491);
             this.szlaban_2.Name = "szlaban_2";
             this.szlaban_2.Size = new System.Drawing.Size(26, 113);
             this.szlaban_2.TabIndex = 2;
             this.szlaban_2.TabStop = false;
             this.szlaban_2.Visible = false;
+            // 
+            // LeftCar_1
+            // 
+            this.LeftCar_1.Image = ((System.Drawing.Image)(resources.GetObject("LeftCar_1.Image")));
+            this.LeftCar_1.Location = new System.Drawing.Point(12, 204);
+            this.LeftCar_1.Name = "LeftCar_1";
+            this.LeftCar_1.Size = new System.Drawing.Size(52, 22);
+            this.LeftCar_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LeftCar_1.TabIndex = 3;
+            this.LeftCar_1.TabStop = false;
             // 
             // Form1
             // 
@@ -73,6 +87,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1230, 651);
+            this.Controls.Add(this.LeftCar_1);
             this.Controls.Add(this.szlaban_2);
             this.Controls.Add(this.szlaban_1);
             this.Controls.Add(this.train);
@@ -82,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.train)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -91,6 +107,7 @@
         private System.Windows.Forms.PictureBox train;
         private System.Windows.Forms.PictureBox szlaban_1;
         private System.Windows.Forms.PictureBox szlaban_2;
+        private System.Windows.Forms.PictureBox LeftCar_1;
     }
 }
 
