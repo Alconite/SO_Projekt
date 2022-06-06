@@ -33,10 +33,16 @@
             this.szlaban_1 = new System.Windows.Forms.PictureBox();
             this.szlaban_2 = new System.Windows.Forms.PictureBox();
             this.LeftCar_1 = new System.Windows.Forms.PictureBox();
+            this.LeftCar_2 = new System.Windows.Forms.PictureBox();
+            this.Right_Car_1 = new System.Windows.Forms.PictureBox();
+            this.Right_Car_2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.train)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftCar_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_2)).BeginInit();
             this.SuspendLayout();
             // 
             // train
@@ -80,6 +86,36 @@
             this.LeftCar_1.TabIndex = 3;
             this.LeftCar_1.TabStop = false;
             // 
+            // LeftCar_2
+            // 
+            this.LeftCar_2.Image = ((System.Drawing.Image)(resources.GetObject("LeftCar_2.Image")));
+            this.LeftCar_2.Location = new System.Drawing.Point(12, 204);
+            this.LeftCar_2.Name = "LeftCar_2";
+            this.LeftCar_2.Size = new System.Drawing.Size(52, 22);
+            this.LeftCar_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LeftCar_2.TabIndex = 4;
+            this.LeftCar_2.TabStop = false;
+            // 
+            // Right_Car_1
+            // 
+            this.Right_Car_1.Image = ((System.Drawing.Image)(resources.GetObject("Right_Car_1.Image")));
+            this.Right_Car_1.Location = new System.Drawing.Point(1166, 519);
+            this.Right_Car_1.Name = "Right_Car_1";
+            this.Right_Car_1.Size = new System.Drawing.Size(52, 22);
+            this.Right_Car_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Right_Car_1.TabIndex = 5;
+            this.Right_Car_1.TabStop = false;
+            // 
+            // Right_Car_2
+            // 
+            this.Right_Car_2.Image = ((System.Drawing.Image)(resources.GetObject("Right_Car_2.Image")));
+            this.Right_Car_2.Location = new System.Drawing.Point(1166, 519);
+            this.Right_Car_2.Name = "Right_Car_2";
+            this.Right_Car_2.Size = new System.Drawing.Size(52, 22);
+            this.Right_Car_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Right_Car_2.TabIndex = 6;
+            this.Right_Car_2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,6 +123,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1230, 651);
+            this.Controls.Add(this.Right_Car_2);
+            this.Controls.Add(this.Right_Car_1);
+            this.Controls.Add(this.LeftCar_2);
             this.Controls.Add(this.LeftCar_1);
             this.Controls.Add(this.szlaban_2);
             this.Controls.Add(this.szlaban_1);
@@ -98,6 +137,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.szlaban_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftCar_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,6 +150,9 @@
         private System.Windows.Forms.PictureBox szlaban_1;
         private System.Windows.Forms.PictureBox szlaban_2;
         private System.Windows.Forms.PictureBox LeftCar_1;
+        private System.Windows.Forms.PictureBox LeftCar_2;
+        private System.Windows.Forms.PictureBox Right_Car_1;
+        private System.Windows.Forms.PictureBox Right_Car_2;
     }
 }
 
