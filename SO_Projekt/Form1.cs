@@ -56,7 +56,7 @@ namespace SO_Projekt
         public int Train_Gora_Dol;
         bool czy_pojazd_przejechal = true;
 
-        Bitmap bitmap1 = (Bitmap) Bitmap.FromFile(@"C:\Users\Alconite\source\repos\SO_Projekt\materials\Samochod.jpg");
+        Bitmap bitmap1 = (Bitmap)Bitmap.FromFile(@"C:\Users\Alconite\source\repos\SO_Projekt\materials\Samochod.jpg");
         Bitmap bitmap2 = (Bitmap)Bitmap.FromFile(@"C:\Users\Alconite\source\repos\SO_Projekt\materials\Samochod.jpg");
         Bitmap bitmap4 = (Bitmap)Bitmap.FromFile(@"C:\Users\Alconite\source\repos\SO_Projekt\materials\Samochod.jpg");
         Bitmap bitmap5 = (Bitmap)Bitmap.FromFile(@"C:\Users\Alconite\source\repos\SO_Projekt\materials\Samochod.jpg");
@@ -65,52 +65,52 @@ namespace SO_Projekt
         public Form1()
         {
             InitializeComponent();
-            Thread trainMove = new Thread(FromWhereTrain);
-            trainMove.Start(); // wyjaśnić dlaczego ten wątek nic nie robi póki jedzie auto
+            bitmap1.RotateFlip(RotateFlipType.Rotate180FlipY);
+            pictureBox4.Image = bitmap1;
+            bitmap2.RotateFlip(RotateFlipType.Rotate180FlipY);
+            pictureBox5.Image = bitmap2;
             WatekStart();
         }
 
         void WatekStart()
         {
-            Thread LeftCar_1_Moving = new Thread(First_Car);
-            Thread LeftCar_2_Moving = new Thread(Second_Car);
-            Thread RightCar_1_Moving = new Thread(Fourth_Car);
-            Thread RightCar_2_Moving = new Thread(Fifth_Car);
-            LeftCar_1_Moving.Start();
-            LeftCar_2_Moving.Start();
-            RightCar_1_Moving.Start();
-            RightCar_2_Moving.Start();
+            Thread trainMove = new Thread(TrainMove);
+            Thread thread1 = new Thread(First_Car);
+            Thread thread2 = new Thread(Second_Car);
+            Thread thread3 = new Thread(Fourth_Car);
+            Thread thread4 = new Thread(Fifth_Car);
+            trainMove.Start();
+            thread1.Start();
+            thread2.Start();
+            thread3.Start();
+            thread4.Start();
         }
 
         private void TrainMove()
         {
+            Thread.Sleep(6000);
             if (Train_Gora_Dol == 1)
             {
                 while (true)
                 {
                     if (InvokeRequired)
                     {
-                        train.Invoke(new Action(delegate ()
+                        pictureBox1.Invoke(new Action(delegate ()
                         {
-                            train.Refresh();
+                            pictureBox1.Refresh();
                             //this.Refresh();
-                            train.Location = new Point(poz_pociagu_x, poz_pociagu_y);
+                            pictureBox1.Location = new Point(poz_pociagu_x, poz_pociagu_y);
                             poz_pociagu_y++;
 
                             Szlaban();
                             if (poz_pociagu_y > 680)
                             {
                                 poz_pociagu_y = 0;
-                                train.Location = new Point(poz_pociagu_x, poz_pociagu_y);
+                                pictureBox1.Location = new Point(poz_pociagu_x, poz_pociagu_y);
                                 czy_pojazd_przejechal = true;
                             }
                         }));
                         Thread.Sleep(5);
-                    }
-                    if (czy_pojazd_przejechal == true)
-                    {
-                        FromWhereTrain();
-                        break;
                     }
                 }
             }
@@ -121,27 +121,22 @@ namespace SO_Projekt
                 {
                     if (InvokeRequired)
                     {
-                        train.Invoke(new Action(delegate ()
+                        pictureBox1.Invoke(new Action(delegate ()
                         {
-                            train.Refresh();
+                            pictureBox1.Refresh();
                             //this.Refresh();
-                            train.Location = new Point(poz_pociagu_x, poz_pociagu_y);
+                            pictureBox1.Location = new Point(poz_pociagu_x, poz_pociagu_y);
                             poz_pociagu_y--;
 
                             Szlaban();
                             if (poz_pociagu_y < 15)
                             {
                                 poz_pociagu_y = 690;
-                                train.Location = new Point(poz_pociagu_x, poz_pociagu_y);
+                                pictureBox1.Location = new Point(poz_pociagu_x, poz_pociagu_y);
                                 //czy_pojazd_przejechal = true;
                             }
                         }));
                         Thread.Sleep(5);
-                    }
-                    if (czy_pojazd_przejechal == true)
-                    {
-                        FromWhereTrain();
-                        break;
                     }
                 }
             }
@@ -157,17 +152,19 @@ namespace SO_Projekt
 
         void Szlaban()
         {
-            szlaban_1.Image = null;
-            szlaban_2.Image = null;
+            pictureBox2.Image = null;
+            pictureBox3.Image = null;
             if (poz_pociagu_y > 360)
             {
-                szlaban_1.Visible = true;
-                szlaban_2.Visible = true;
+                pictureBox2.Visible = true;
+                pictureBox3.Visible = true;
+                czy_pojazd_przejechal = false;
             }
             else
             {
-                szlaban_1.Visible = false;
-                szlaban_2.Visible = false;
+                pictureBox2.Visible = false;
+                pictureBox3.Visible = false;
+                czy_pojazd_przejechal = true;
             }
             //szlaban_1.Refresh();
             //szlaban_2.Refresh();
@@ -180,16 +177,16 @@ namespace SO_Projekt
             {
                 if (InvokeRequired)
                 {
-                    LeftCar_1.Invoke(new Action(delegate ()
+                    pictureBox4.Invoke(new Action(delegate ()
                     {
-                        LeftCar_1.Refresh();
+                        //pictureBox4.Refresh();
                         if (!czy_pojazd_przejechal)
                         {
-                            ZatrzymajAuto();
+                            ZatrzymajAuto1();
                         }
                         else
                         {
-                            LeftCar_1.Location = new Point(poz_car1_x, poz_y_1);
+                            pictureBox4.Location = new Point(poz_car1_x, poz_y_1);
                             ZwolnijPredkosc();
                             if (PrzestawKierunekRuchu1 == false)
                                 poz_car1_x++;
@@ -199,15 +196,23 @@ namespace SO_Projekt
                             {
                                 Thread povorot_1 = new Thread(KiedySkret1_1);
                                 povorot_1.Start();
+                            }
+                            if (poz_car1_x == 750 && poz_y_1 == 342)
+                            {
                                 bitmap1.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                LeftCar_1.Image = bitmap1;
+                                pictureBox4.Image = bitmap1;
+                                pictureBox4.Refresh();
                             }
                             if (poz_car1_x == 260 && poz_y_1 == 342)
                             {
-                                Thread povorot_1_1 = new Thread(KiedySkret1_1);
+                                Thread povorot_1_1 = new Thread(KiedySkret1_1_1);
                                 povorot_1_1.Start();
+                            }
+                            if (poz_car1_x == 300 && poz_y_1 == 555)
+                            {
                                 bitmap1.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                LeftCar_1.Image = bitmap1;
+                                pictureBox4.Image = bitmap1;
+                                pictureBox4.Refresh();
                             }
                         }
                     }));
@@ -218,21 +223,22 @@ namespace SO_Projekt
 
         private void Second_Car()
         {
+            Thread.Sleep(15000);
             PredkoscPojazdu();
             while (true)
             {
                 if (InvokeRequired)
                 {
-                    LeftCar_2.Invoke(new Action(delegate ()
+                    pictureBox5.Invoke(new Action(delegate ()
                     {
-                        LeftCar_2.Refresh();
+                        //pictureBox5.Refresh();
                         if (!czy_pojazd_przejechal)
                         {
-                            ZatrzymajAuto();
+                            ZatrzymajAuto2();
                         }
                         else
                         {
-                            LeftCar_2.Location = new Point(poz_car2_x, poz_y_2);
+                            pictureBox5.Location = new Point(poz_car2_x, poz_y_2);
                             ZwolnijPredkosc();
                             if (PrzestawKierunekRuchu2 == false)
                                 poz_car2_x++;
@@ -242,15 +248,24 @@ namespace SO_Projekt
                             {
                                 Thread povorot_1 = new Thread(KiedySkret1_2);
                                 povorot_1.Start();
+                            }
+                            if (poz_car2_x == 750 && poz_y_2 == 342)
+                            {
                                 bitmap2.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                LeftCar_2.Image = bitmap2;
+                                pictureBox5.Image = bitmap2;
+                                pictureBox5.Refresh();
                             }
                             if (poz_car2_x == 260 && poz_y_2 == 342)
                             {
-                                Thread povorot_1_1 = new Thread(KiedySkret1_1);
+                                Thread povorot_1_1 = new Thread(KiedySkret1_2_1);
                                 povorot_1_1.Start();
+
+                            }
+                            if (poz_car2_x == 300 && poz_y_2 == 555)
+                            {
                                 bitmap2.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                LeftCar_2.Image = bitmap2;
+                                pictureBox5.Image = bitmap2;
+                                pictureBox5.Refresh();
                             }
                         }
                     }));
@@ -266,16 +281,16 @@ namespace SO_Projekt
             {
                 if (InvokeRequired)
                 {
-                    Right_Car_1.Invoke(new Action(delegate ()
+                    pictureBox6.Invoke(new Action(delegate ()
                     {
-                        Right_Car_1.Refresh();
+                        //pictureBox6.Refresh();
                         if (!czy_pojazd_przejechal)
                         {
-                            ZatrzymajAuto();
+                            ZatrzymajAuto3();
                         }
                         else
                         {
-                            Right_Car_1.Location = new Point(poz_car4_x, poz_y_4);
+                            pictureBox6.Location = new Point(poz_car4_x, poz_y_4);
                             ZwolnijPredkosc();
                             if (PrzestawKierunekRuchu3 == false)
                                 poz_car4_x++;
@@ -285,15 +300,23 @@ namespace SO_Projekt
                             {
                                 Thread povorot_2 = new Thread(KiedySkret2_1);
                                 povorot_2.Start();
-                                bitmap4.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                Right_Car_1.Image = bitmap4;
                             }
-                            if (poz_car2_x == 812 && poz_y_2 == 379)
+                            if (poz_car4_x == 266 && poz_y_4 == 379)
                             {
-                                Thread povorot_2_1 = new Thread(KiedySkret2_2);
-                                povorot_2_1.Start();
                                 bitmap4.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                Right_Car_1.Image = bitmap4;
+                                pictureBox6.Image = bitmap4;
+                                pictureBox6.Refresh();
+                            }
+                            if (poz_car4_x == 812 && poz_y_4 == 379)
+                            {
+                                Thread povorot_2_1 = new Thread(KiedySkret2_1_1);
+                                povorot_2_1.Start();
+                            }
+                            if (poz_car4_x == 790 && poz_y_4 == 168)
+                            {
+                                bitmap4.RotateFlip(RotateFlipType.Rotate180FlipY);
+                                pictureBox6.Image = bitmap4;
+                                pictureBox6.Refresh();
                             }
                         }
                     }));
@@ -304,39 +327,48 @@ namespace SO_Projekt
 
         private void Fifth_Car()
         {
+            Thread.Sleep(15000);
             PredkoscPojazdu();
             while (true)
             {
                 if (InvokeRequired)
                 {
-                    Right_Car_2.Invoke(new Action(delegate ()
+                    pictureBox7.Invoke(new Action(delegate ()
                     {
-                        Right_Car_2.Refresh();
+                        //pictureBox7.Refresh();
                         if (!czy_pojazd_przejechal)
                         {
-                            ZatrzymajAuto();
+                            ZatrzymajAuto4();
                         }
                         else
                         {
-                            Right_Car_2.Location = new Point(poz_car5_x, poz_y_5);
+                            pictureBox7.Location = new Point(poz_car5_x, poz_y_5);
                             ZwolnijPredkosc();
                             if (PrzestawKierunekRuchu4 == false)
-                                poz_car4_x++;
+                                poz_car5_x++;
                             else
-                                poz_car4_x--;
-                            if (poz_car4_x == 255 && poz_y_4 == 519)
+                                poz_car5_x--;
+                            if (poz_car5_x == 255 && poz_y_5 == 519)
                             {
-                                Thread povorot_5 = new Thread(KiedySkret2_1);
+                                Thread povorot_5 = new Thread(KiedySkret2_2);
                                 povorot_5.Start();
+                            }
+                            if (poz_car5_x == 266 && poz_y_5 == 379)
+                            { 
                                 bitmap5.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                Right_Car_2.Image = bitmap5;
+                                pictureBox7.Image = bitmap5;
+                                pictureBox7.Refresh();
                             }
                             if (poz_car5_x == 812 && poz_y_5 == 379)
                             {
-                                Thread povorot_5_1 = new Thread(KiedySkret2_2);
+                                Thread povorot_5_1 = new Thread(KiedySkret2_2_1);
                                 povorot_5_1.Start();
+                            }
+                            if (poz_car5_x == 790 && poz_y_5 == 168)
+                            {
                                 bitmap5.RotateFlip(RotateFlipType.Rotate180FlipY);
-                                Right_Car_2.Image = bitmap5;
+                                pictureBox7.Image = bitmap5;
+                                pictureBox7.Refresh();
                             }
                         }
                     }));
@@ -345,9 +377,59 @@ namespace SO_Projekt
             }
         }
 
-        void ZatrzymajAuto()
+        void ZatrzymajAuto1()
         {
-            return;
+            if (PrzestawKierunekRuchu1 == true && poz_car1_x > 1000)
+            {
+                poz_car1_x++;
+                poz_car1_x--;
+            }
+            else if (PrzestawKierunekRuchu1 == false && poz_car1_x > 1000)
+            {
+                poz_car1_x--;
+                poz_car1_x++;
+            }
+        }
+        void ZatrzymajAuto2()
+        {
+            if (PrzestawKierunekRuchu2 == true && poz_car2_x > 1000)
+            {
+                poz_car2_x++;
+                poz_car2_x--;
+            }
+            else if (PrzestawKierunekRuchu2 == false && poz_car2_x > 1000)
+            {
+                poz_car2_x--;
+                poz_car2_x++;
+            }
+        }
+
+        void ZatrzymajAuto3()
+        {
+            if (PrzestawKierunekRuchu3 == true && poz_car4_x > 1000)
+            {
+                poz_car4_x++;
+                poz_car4_x--;
+            }
+            else if (PrzestawKierunekRuchu3 == false && poz_car4_x > 1000)
+            {
+                poz_car4_x--;
+                poz_car4_x++;
+            }
+        }
+
+        void ZatrzymajAuto4()
+        {
+            if (PrzestawKierunekRuchu4 == true && poz_car5_x > 1000)
+            {
+                poz_car5_x++;
+                poz_car5_x--;
+            }
+            else if (PrzestawKierunekRuchu4 == false && poz_car5_x > 1000)
+            {
+                poz_car5_x--;
+                poz_car5_x++;
+            }
         }
 
         void PredkoscPojazdu()
@@ -355,17 +437,15 @@ namespace SO_Projekt
             Random rd = new Random();
             Car_1_Speed = rd.Next(5, 10);
             Car_2_Speed = rd.Next(5, 10);
-            Car_3_Speed = rd.Next(5, 10);
             Car_4_Speed = rd.Next(5, 10);
             Car_5_Speed = rd.Next(5, 10);
-            Car_6_Speed = rd.Next(5, 10);
         }
 
         void ZwolnijPredkosc()
         {
-            if ((poz_car1_x - poz_car2_x < 70) || (poz_car1_x - poz_car2_x < -70))
+            if ((poz_car1_x - poz_car2_x < 70) && (poz_car1_x - poz_car2_x < -70))
                 Car_2_Speed = Car_1_Speed;
-            if ((poz_car4_x - poz_car5_x < 70) || (poz_car4_x - poz_car5_x < -70))
+            if ((poz_car4_x - poz_car5_x < 70) && (poz_car4_x - poz_car5_x < -70))
                 Car_5_Speed = Car_4_Speed;
         }
 
@@ -375,50 +455,118 @@ namespace SO_Projekt
             {
                 Thread.Sleep(5);
                 poz_y_1++;
+                if (i == 69)
+                {
+                    if (PrzestawKierunekRuchu1 == false)
+                        PrzestawKierunekRuchu1 = true;
+                    else
+                        PrzestawKierunekRuchu1 = false;
+                }
             }
-            if (PrzestawKierunekRuchu1 == false)
-                PrzestawKierunekRuchu1 = true;
-            else
-                PrzestawKierunekRuchu1 = false;
+        }
+        void KiedySkret1_1_1()
+        {
+            for (int i = 0; i < 213; i++)
+            {
+                Thread.Sleep(5);
+                poz_y_1++;
+                if (i == 160)
+                {
+                    if (PrzestawKierunekRuchu1 == false)
+                        PrzestawKierunekRuchu1 = true;
+                    else
+                        PrzestawKierunekRuchu1 = false;
+                }
+            }
         }
 
         void KiedySkret1_2()
+        {
+            for (int i = 0; i < 138; i++)
+            {
+                Thread.Sleep(5);
+                poz_y_2++;
+                if (i == 69)
+                {
+                    if (PrzestawKierunekRuchu2 == false)
+                        PrzestawKierunekRuchu2 = true;
+                    else
+                        PrzestawKierunekRuchu2 = false;
+                }
+            }
+        }
+
+        void KiedySkret1_2_1()
         {
             for (int i = 0; i < 213; i++)
             {
                 Thread.Sleep(5);
                 poz_y_2++;
+                if (i == 160)
+                {
+                    if (PrzestawKierunekRuchu2 == false)
+                        PrzestawKierunekRuchu2 = true;
+                    else
+                        PrzestawKierunekRuchu2 = false;
+                }
             }
-            if (PrzestawKierunekRuchu2 == false)
-                PrzestawKierunekRuchu2 = true;
-            else
-                PrzestawKierunekRuchu2 = false;
         }
 
         void KiedySkret2_1()
         {
-            for (int i = 0; i < 140; i--)
+            for (int i = 0; i < 140; i++)
             {
                 Thread.Sleep(5);
                 poz_y_4--;
+                if (i == 69)
+                    if (PrzestawKierunekRuchu3 == true)
+                        PrzestawKierunekRuchu3 = false;
+                    else
+                        PrzestawKierunekRuchu3 = true;
             }
-            if (PrzestawKierunekRuchu3 == true)
-                PrzestawKierunekRuchu3 = false;
-            else
-                PrzestawKierunekRuchu3 = true;
+          
         }
 
-        void KiedySkret2_2()
+        void KiedySkret2_1_1()
         {
             for (int i = 0; i < 211; i++)
             {
                 Thread.Sleep(5);
-                poz_y_5--;
+                poz_y_4--;
+                if (i == 145)
+                    if (PrzestawKierunekRuchu3 == true)
+                        PrzestawKierunekRuchu3 = false;
+                    else
+                        PrzestawKierunekRuchu3 = true;
             }
-            if (PrzestawKierunekRuchu4 == true)
-                PrzestawKierunekRuchu4 = false;
-            else
-                PrzestawKierunekRuchu4 = true;
+        }
+
+        void KiedySkret2_2()
+        {      
+            for (int i = 0; i < 140; i++)
+            {
+                Thread.Sleep(5);
+                poz_y_5--;
+                if (i == 69)
+                    if (PrzestawKierunekRuchu4 == true)
+                        PrzestawKierunekRuchu4 = false;
+                    else
+                        PrzestawKierunekRuchu4 = true;
+            }
+        }
+
+        void KiedySkret2_2_1()
+        {  
+            for (int i = 0; i < 211; i++)
+            {
+                Thread.Sleep(5);
+                poz_y_5--;
+                if (i == 145)
+                    if (PrzestawKierunekRuchu4 == true)
+                        PrzestawKierunekRuchu4 = false;
+                    else
+                        PrzestawKierunekRuchu4 = true;
+            }
         }
 
 

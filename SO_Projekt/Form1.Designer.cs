@@ -29,92 +29,92 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.train = new System.Windows.Forms.PictureBox();
-            this.szlaban_1 = new System.Windows.Forms.PictureBox();
-            this.szlaban_2 = new System.Windows.Forms.PictureBox();
-            this.LeftCar_1 = new System.Windows.Forms.PictureBox();
-            this.LeftCar_2 = new System.Windows.Forms.PictureBox();
-            this.Right_Car_1 = new System.Windows.Forms.PictureBox();
-            this.Right_Car_2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.train)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.szlaban_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.szlaban_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_2)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // train
             // 
-            this.train.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.train.Image = ((System.Drawing.Image)(resources.GetObject("train.Image")));
-            this.train.Location = new System.Drawing.Point(1044, 0);
-            this.train.Name = "train";
-            this.train.Size = new System.Drawing.Size(60, 66);
-            this.train.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.train.TabIndex = 0;
-            this.train.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("train.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1044, 0);
+            this.pictureBox1.Name = "train";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // szlaban_1
             // 
-            this.szlaban_1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.szlaban_1.Location = new System.Drawing.Point(1010, 491);
-            this.szlaban_1.Name = "szlaban_1";
-            this.szlaban_1.Size = new System.Drawing.Size(26, 113);
-            this.szlaban_1.TabIndex = 1;
-            this.szlaban_1.TabStop = false;
-            this.szlaban_1.Visible = false;
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox2.Location = new System.Drawing.Point(1010, 491);
+            this.pictureBox2.Name = "szlaban_1";
+            this.pictureBox2.Size = new System.Drawing.Size(26, 113);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // szlaban_2
             // 
-            this.szlaban_2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.szlaban_2.Location = new System.Drawing.Point(1114, 491);
-            this.szlaban_2.Name = "szlaban_2";
-            this.szlaban_2.Size = new System.Drawing.Size(26, 113);
-            this.szlaban_2.TabIndex = 2;
-            this.szlaban_2.TabStop = false;
-            this.szlaban_2.Visible = false;
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox3.Location = new System.Drawing.Point(1114, 491);
+            this.pictureBox3.Name = "szlaban_2";
+            this.pictureBox3.Size = new System.Drawing.Size(26, 113);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
             // 
             // LeftCar_1
             // 
-            this.LeftCar_1.Image = ((System.Drawing.Image)(resources.GetObject("LeftCar_1.Image")));
-            this.LeftCar_1.Location = new System.Drawing.Point(12, 204);
-            this.LeftCar_1.Name = "LeftCar_1";
-            this.LeftCar_1.Size = new System.Drawing.Size(52, 22);
-            this.LeftCar_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LeftCar_1.TabIndex = 3;
-            this.LeftCar_1.TabStop = false;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("LeftCar_1.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(12, 204);
+            this.pictureBox4.Name = "LeftCar_1";
+            this.pictureBox4.Size = new System.Drawing.Size(52, 22);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
             // 
             // LeftCar_2
             // 
-            this.LeftCar_2.Image = ((System.Drawing.Image)(resources.GetObject("LeftCar_2.Image")));
-            this.LeftCar_2.Location = new System.Drawing.Point(12, 204);
-            this.LeftCar_2.Name = "LeftCar_2";
-            this.LeftCar_2.Size = new System.Drawing.Size(52, 22);
-            this.LeftCar_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LeftCar_2.TabIndex = 4;
-            this.LeftCar_2.TabStop = false;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("LeftCar_2.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(12, 204);
+            this.pictureBox5.Name = "LeftCar_2";
+            this.pictureBox5.Size = new System.Drawing.Size(52, 22);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
             // 
             // Right_Car_1
             // 
-            this.Right_Car_1.Image = ((System.Drawing.Image)(resources.GetObject("Right_Car_1.Image")));
-            this.Right_Car_1.Location = new System.Drawing.Point(1166, 519);
-            this.Right_Car_1.Name = "Right_Car_1";
-            this.Right_Car_1.Size = new System.Drawing.Size(52, 22);
-            this.Right_Car_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Right_Car_1.TabIndex = 5;
-            this.Right_Car_1.TabStop = false;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("Right_Car_1.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(1166, 519);
+            this.pictureBox6.Name = "Right_Car_1";
+            this.pictureBox6.Size = new System.Drawing.Size(52, 22);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 5;
+            this.pictureBox6.TabStop = false;
             // 
             // Right_Car_2
             // 
-            this.Right_Car_2.Image = ((System.Drawing.Image)(resources.GetObject("Right_Car_2.Image")));
-            this.Right_Car_2.Location = new System.Drawing.Point(1166, 519);
-            this.Right_Car_2.Name = "Right_Car_2";
-            this.Right_Car_2.Size = new System.Drawing.Size(52, 22);
-            this.Right_Car_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Right_Car_2.TabIndex = 6;
-            this.Right_Car_2.TabStop = false;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("Right_Car_2.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(1166, 519);
+            this.pictureBox7.Name = "Right_Car_2";
+            this.pictureBox7.Size = new System.Drawing.Size(52, 22);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 6;
+            this.pictureBox7.TabStop = false;
             // 
             // Form1
             // 
@@ -123,36 +123,36 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1230, 651);
-            this.Controls.Add(this.Right_Car_2);
-            this.Controls.Add(this.Right_Car_1);
-            this.Controls.Add(this.LeftCar_2);
-            this.Controls.Add(this.LeftCar_1);
-            this.Controls.Add(this.szlaban_2);
-            this.Controls.Add(this.szlaban_1);
-            this.Controls.Add(this.train);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.train)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.szlaban_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.szlaban_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LeftCar_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Right_Car_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox train;
-        private System.Windows.Forms.PictureBox szlaban_1;
-        private System.Windows.Forms.PictureBox szlaban_2;
-        private System.Windows.Forms.PictureBox LeftCar_1;
-        private System.Windows.Forms.PictureBox LeftCar_2;
-        private System.Windows.Forms.PictureBox Right_Car_1;
-        private System.Windows.Forms.PictureBox Right_Car_2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }
 
